@@ -1,70 +1,83 @@
-//Define all the containers
-window.onload = function () {
-    var el = document.getElementById('div1');
-    el.onclick = sq1;
+const cells = document.querySelectorAll(".cell");
+const statusText = document.querySelector("#statusText");
+const restartBtn = document.querySelector("#restartBtn");
+const winConditions = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 6]
+];
+
+let options = ["", "", "", "", "", "", "", "", ""];
+let currentPlayer = "X";
+let running = false;
+
+initializeGame();
+
+function initializeGame() {
+    cells.forEach(cell => cell.addEventListener("click", cellClicked));
+    restartBtn.addEventListener("click", restartGame);
+    statusText.textContent = `${currentPlayer}'s turn`;
+    running = true;
 }
-window.onload = function () {
-    var el = document.getElementById('div2');
-    el.onclick = sq2;
+
+function cellClicked() {
+    const cellIndex = this.getAttribute("cellIndex");
+    if(options[cellIndex] != "" || !running){
+        return;
+    }
+    updateCell(this, cellIndex);
+    checkWinner();
 }
-// window.onload = function () {
-//     var el = document.getElementById('div3');
-//     el.onclick = sq3;
-// }
-// window.onload = function () {
-//     var el = document.getElementById('div4');
-//     el.onclick = sq4;
-// }
-// window.onload = function () {
-//     var el = document.getElementById('div5');
-//     el.onclick = sq5;
-// }
-// window.onload = function () {
-//     var el = document.getElementById('div6');
-//     el.onclick = sq6;
-// }
-// window.onload = function () {
-//     var el = document.getElementById('div7');
-//     el.onclick = sq7;
-// }
-// window.onload = function () {
-//     var el = document.getElementById('div8');
-//     el.onclick = sq8;
-// }
-// window.onload = function () {
-//     var el = document.getElementById('div9');
-//     el.onclick = sq9;
-// }
 
-//for testing purposes
-function sq2() {
-    console.log('hellos');
+function updateCell(cell, index) {
+    options[index] = currentPlayer;
+    cell.textContent = currentPlayer;
 }
-//Reset game control
 
-//define player
+function changePlayer() {
+    currentPlayer = (currentPlayer == "X") ? "O" : "X";
+    statusText.textContent = `${currentPlayer}'s turn`;
+}
 
-//Choose X or O for player
+function checkWinner() {
+    let roundWon = false;
 
+    for(let i = 0; i < winConditions.length; i++) {
+        const condition = winConditions[i];
+        const cellA = options[condition[0]];
+        const cellB = options[condition[1]];
+        const cellC = options[condition[2]];
 
-//X object
-// const x = 'X'
+        if(cellA == "" || cellB == "" || cellC == "") {
+            continue;
+        }
+        if(cellA == cellB && cellB == cellC) {
+            roundWon = true;
+            break;
+        }
+    }
+    if(roundWon){
+        statusText.textContent = `${currentPlayer} wins!`;
+        running = false;
+    }
+    else if(!options.includes("")) {
+        statusText.textContent = `Draw!`;
+        running = false;
+    }
+    else{
+        changePlayer();
+    }
+}
 
-// //O object
-// const o = 'O'
-
-// //display whos turn it is
-
-
-//win logic and winning message
-
-
-
-//clicking squares
-// function sq1() {
-//     if (player === 1) {
-//         'div1' = 'x'
-//     }
-//     } else {
-//         'div1' = 'o'
-//     }
+function restartGame() {
+    currentPlayer = "X";
+    options = ["", "", "", "", "", "", "", "", ""];
+    statusText.textContent = `${currentPlayer}'s turn`;
+    cells.forEach(cell => cell.textContent = "");
+    running = true;
+}
