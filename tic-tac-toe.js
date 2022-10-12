@@ -12,7 +12,7 @@ const winConditions = [
     [0, 4, 8],
     [2, 4, 6]
 ];
-// let running = false;
+
 let currentPlayer = 'x'
 
 // run game on click
@@ -24,23 +24,43 @@ cells.forEach(cell => cell.addEventListener('click', cellClicked))
 // need to determine which player clicked then display the char in the cell
 //make sure i cant click on the updated square
 function cellClicked(event) {
-    event.target.innerText = 'x'
+    event.target.innerText = ''
     console.log('clicked')
-
+    console.log()
+    
 }
-console.log()
+console.log(currentPlayer)
+
 
 //needs to switch after click and display who the current player is below the game
 
 function changePlayer () {
-     if (currentPlayer == 'x') {
+
+     if (currentPlayer= 'x') {
     currentPlayer = 'o';
     } else {
     currentPlayer = 'x'
-}}
+
+}} 
+
+statusText.textContent = `${currentPlayer}'s turn`
+
 console.log(currentPlayer)
 
+// function updatePlayer () {
+//     for(let i=0; i<currentPlayer; i++) 
+//         if(innerText = 'x') {
 
+//         }
+
+
+
+// }
+
+
+// function updateBoard () {
+//     if 
+// }
 //check to see if there is a winner 
 //
 // function checkWinner () {
@@ -48,8 +68,10 @@ console.log(currentPlayer)
 // }
 
 // restart game
-cells.forEach(cell => cell.addEventListener('click', cellClicked))
-function restartGame () {
-    cells = ""
-    console.log(hello)
-}
+// restartBtn.forEach(restartBtns => restartBtns.addEventListener('click', restartGame))
+
+
+// function restartGame () {
+//     cells = ""
+//     console.log()
+// }
