@@ -24,11 +24,13 @@
     margin: 5px;
     background-color: green;
     color: whitesmoke;
+    text-align: center;
 }
 
 .skills {
     border: 1px solid black;
     margin: 5px;
+    height: auto;
 }
 
 .add-skill {
@@ -37,16 +39,18 @@
 }
 
 .inputbox {
-    border: 1px solid black;
     margin: 5px;
 }
 .addbtn {
-    border: 1px solid black;
     margin: 5px;
     background-color: white;
     color: green;
 }
 
+.button {
+    width: 90px;
+    height: 70px;
+}
 #skill-list {
     columns: auto;
     
@@ -56,6 +60,7 @@
     background-color: white;
     color: green;
     border: 5px solid green
+    
 }
 
 #skillinput {
