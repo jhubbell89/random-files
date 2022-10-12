@@ -1,15 +1,65 @@
 .parent {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
     grid-column-gap: 0px;
     grid-row-gap: 0px;
+    border: 1px solid black;
+    margin: 50px 5px 5px 5px;
     }
     
-    .div1 { grid-area: 1 / 1 / 2 / 2; }
-    .div2 { grid-area: 2 / 1 / 3 / 2; }
-    .div3 { grid-area: 3 / 1 / 4 / 2; }
+    .header { grid-area: 1 / 1 / 2 / 3; }
+    .skills { grid-area: 2 / 1 / 3 / 3; }
+    .inputbox { grid-area: 3 / 1 / 4 / 2; }
+    .addbtn {grid-area: 3 / 2 / 4 / 3; }
 
 .main-prg {
+    border: 5px solid grey;
+    height: auto;
+    min-height: 700px;
+    width: 400px;
+}
+.header {
+    border: 1px solid black;
+    margin: 5px;
+    background-color: green;
+    color: whitesmoke;
+}
+
+.skills {
+    border: 1px solid black;
+    margin: 5px;
+}
+
+.add-skill {
+    border: 1px solid black;
+    margin: 5px;
+}
+
+.inputbox {
+    border: 1px solid black;
+    margin: 5px;
+}
+.addbtn {
+    border: 1px solid black;
+    margin: 5px;
+    background-color: white;
+    color: green;
+}
+
+#skill-list {
+    columns: auto;
     
+}
+
+#addskillbtn {
+    background-color: white;
+    color: green;
+    border: 5px solid green
+}
+
+#skillinput {
+    background: white;
+    color: green;
+    border: 5px solid green;
 }
