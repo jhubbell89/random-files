@@ -1,6 +1,7 @@
-const cells = document.querySelectorAll(".cell");
-const statusText = document.querySelector("#statusText");
-const restartBtn = document.querySelector("#restartBtn");
+//define constants
+const cells = document.querySelectorAll (".cell");
+const statusText = document.querySelector ("#gameStatus");
+const restartBtn = document.querySelector ("#restartButton");
 const winConditions = [
     [0, 1, 2],
     [3, 4, 5],
@@ -11,73 +12,44 @@ const winConditions = [
     [0, 4, 8],
     [2, 4, 6]
 ];
+// let running = false;
+let currentPlayer = 'x'
 
-let options = ["", "", "", "", "", "", "", "", ""];
-let currentPlayer = "X";
-let running = false;
+// run game on click
 
-initializeGame();
+cells.forEach(cell => cell.addEventListener('click', cellClicked))
 
-function initializeGame() {
-    cells.forEach(cell => cell.addEventListener("click", cellClicked));
-    restartBtn.addEventListener("click", restartGame);
-    statusText.textContent = `${currentPlayer}'s turn`;
-    running = true;
+
+// what happens if i click on a cell
+// need to determine which player clicked then display the char in the cell
+//make sure i cant click on the updated square
+function cellClicked(event) {
+    event.target.innerText = 'x'
+    console.log('clicked')
+
 }
+console.log()
 
-function cellClicked() {
-    const cellIndex = this.getAttribute("cellIndex");
-    if(options[cellIndex] != "" || !running){
-        return;
-    }
-    updateCell(this, cellIndex);
-    checkWinner();
-}
+//needs to switch after click and display who the current player is below the game
 
-function updateCell(cell, index) {
-    options[index] = currentPlayer;
-    cell.textContent = currentPlayer;
-}
+function changePlayer () {
+     if (currentPlayer == 'x') {
+    currentPlayer = 'o';
+    } else {
+    currentPlayer = 'x'
+}}
+console.log(currentPlayer)
 
-function changePlayer() {
-    currentPlayer = (currentPlayer == "X") ? "O" : "X";
-    statusText.textContent = `${currentPlayer}'s turn`;
-}
 
-function checkWinner() {
-    let roundWon = false;
+//check to see if there is a winner 
+//
+// function checkWinner () {
 
-    for(let i = 0; i < winConditions.length; i++) {
-        const condition = winConditions[i];
-        const cellA = options[condition[0]];
-        const cellB = options[condition[1]];
-        const cellC = options[condition[2]];
+// }
 
-        if(cellA == "" || cellB == "" || cellC == "") {
-            continue;
-        }
-        if(cellA == cellB && cellB == cellC) {
-            roundWon = true;
-            break;
-        }
-    }
-    if(roundWon){
-        statusText.textContent = `${currentPlayer} wins!`;
-        running = false;
-    }
-    else if(!options.includes("")) {
-        statusText.textContent = `Draw!`;
-        running = false;
-    }
-    else{
-        changePlayer();
-    }
-}
-
-function restartGame() {
-    currentPlayer = "X";
-    options = ["", "", "", "", "", "", "", "", ""];
-    statusText.textContent = `${currentPlayer}'s turn`;
-    cells.forEach(cell => cell.textContent = "");
-    running = true;
+// restart game
+cells.forEach(cell => cell.addEventListener('click', cellClicked))
+function restartGame () {
+    cells = ""
+    console.log(hello)
 }

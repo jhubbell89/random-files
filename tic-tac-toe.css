@@ -1,6 +1,8 @@
-.div {
-   
-    border: 5px solid black;
+.cell {
+    border: 5px solid rgb(83, 252, 36);
+    cursor: crosshair;
+    background-color: blue;
+    font-size: 50px;
 }
 
 .parent {
@@ -18,8 +20,8 @@
     #3 { grid-area: 1 / 3 / 2 / 4; }
     #4 { grid-area: 2 / 1 / 3 / 2; }
     #5 { grid-area: 2 / 2 / 3 / 3; }
-    .div6 { grid-area: 2 / 3 / 3 / 4; }
-    .div7 { grid-area: 3 / 1 / 4 / 2; }
-    .div8 { grid-area: 3 / 2 / 4 / 3; }
-    .div9 { grid-area: 3 / 3 / 4 / 4; }
+    #6 { grid-area: 2 / 3 / 3 / 4; }
+    #7 { grid-area: 3 / 1 / 4 / 2; }
+    #8 { grid-area: 3 / 2 / 4 / 3; }
+    #9 { grid-area: 3 / 3 / 4 / 4; }
 
