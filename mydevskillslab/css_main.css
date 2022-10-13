@@ -4,7 +4,6 @@
     grid-template-rows: repeat(3, 1fr);
     grid-column-gap: 0px;
     grid-row-gap: 0px;
-    border: 1px solid black;
     margin: 50px 5px 5px 5px;
     }
     
@@ -19,16 +18,15 @@
     min-height: 700px;
     width: 400px;
 }
-.header {
-    border: 1px solid black;
+.header { 
     margin: 5px;
     background-color: green;
     color: whitesmoke;
     text-align: center;
+    height: 150px;
 }
 
 .skills {
-    border: 1px solid black;
     margin: 5px;
     height: auto;
 }

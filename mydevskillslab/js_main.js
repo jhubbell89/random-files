@@ -1,13 +1,20 @@
 
 // submit button
-const addSkillsBtn = document.getElementById('addskillbtn')
-var inputBox = document.getElementById('skillinput')
+function addLi() {
+    var skilliInput = document.getElementById('skillinput').value,
+        listNode = document.getElementById('skillset'),
+        liNode = document.createElement('li'),
+        txtNode = document.createTextNode(skilliInput);
+  
+    liNode.appendChild(txtNode);
+    listNode.appendChild(liNode);
+  }
+  
+  const myForm = document.querySelector('#addskillbtn');
+  myForm.addEventListener("submit", function(evt) {
+    evt.preventDefault();
+  });
 
+//delete function
+  
 
-//addEventListener
-const listenToBtn = document.querySelector()
-
-const myForm = document.querySelector('');
-myForm.addEventListener("submit", function(evt) {
-    evt.preventDefault ();
-});
