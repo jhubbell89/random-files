@@ -46,32 +46,3 @@ function changePlayer () {
 statusText.textContent = `${currentPlayer}'s turn`
 
 console.log(currentPlayer)
-
-// function updatePlayer () {
-//     for(let i=0; i<currentPlayer; i++) 
-//         if(innerText = 'x') {
-
-//         }
-
-
-
-// }
-
-
-// function updateBoard () {
-//     if 
-// }
-//check to see if there is a winner 
-//
-// function checkWinner () {
-
-// }
-
-// restart game
-// restartBtn.forEach(restartBtns => restartBtns.addEventListener('click', restartGame))
-
-
-// function restartGame () {
-//     cells = ""
-//     console.log()
-// }
