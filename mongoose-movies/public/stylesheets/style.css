@@ -1,8 +1,19 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  
 }
 
 a {
   color: #00B7FF;
+}
+
+html {
+  background-color: black;
+  color: orangered;
+  font-family: 'Lacquer', cursive;
+  background-image: url("https://cdn.diys.com/wp-content/uploads/2017/10/DIY-Halloween-Pumpkins.jpg");
+}
+
+td {
+  padding: 15px;
 }

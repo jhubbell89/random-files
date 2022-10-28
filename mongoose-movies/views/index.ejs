@@ -1,11 +1,12 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
+<%- include('partials/boilerplate.ejs')  %> 
+<title>Movie Home</title>
+CSS rules to specify families
+<body>
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
-  </body>
-</html>
+    <a href="/movies/new">New movie</a>
+    <br>
+    <br>
+    <a href="/movies">All Movies</a>
+</body>
+
